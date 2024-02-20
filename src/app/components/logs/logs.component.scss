@@ -1,0 +1,39 @@
+ion-title.title-header {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-back{
+    font-size: 25px;
+}
+
+.container-info {
+    border-bottom: 2px solid var(--ion-color-primary);
+    padding-bottom: 0.3rem;
+
+    .img-oink {
+        width: 75px;
+    }
+
+    .text-info {
+        color: var(--ion-color-text);
+        font-size: 13px;
+    }
+}
+
+.title-section {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--ion-color-secondary);
+}
+
+.item-info ion-item {
+    font-size: 12px;
+    color: var(--ion-color-text);
+}
+
+.title-item {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--ion-color-secondary);
+}

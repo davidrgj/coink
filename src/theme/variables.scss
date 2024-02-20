@@ -3,21 +3,24 @@
 
 /** Ionic CSS Variables **/
 :root {
+  --ion-background-color: #fff;
+
   /** primary **/
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary: #1EEA00;
+  --ion-color-primary-rgb: 30, 234, 0;
+  --ion-color-primary-contrast: #004B40;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #1EEA00;
+  --ion-color-primary-tint: #1EEA00;
+  --ion-box-shadow-primary: 0px 1px 9px 3px rgba(30, 234, 0, 0.3);
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
-  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary: #004B40;
+  --ion-color-secondary-rgb: 0, 75, 64;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #36abe0;
-  --ion-color-secondary-tint: #50c8ff;
+  --ion-color-secondary-shade: #004B40;
+  --ion-color-secondary-tint: #004B40;
 
   /** tertiary **/
   --ion-color-tertiary: #5260ff;
@@ -60,6 +63,9 @@
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
+  --ion-color-text: #757575;
+  --ion-color-text-light: #AAAAAA;
+  --ion-color-text-hover: #aaaaaa1a;
   --ion-color-medium: #92949c;
   --ion-color-medium-rgb: 146, 148, 156;
   --ion-color-medium-contrast: #ffffff;
@@ -83,6 +89,7 @@
    */
 
   body {
+    --ion-background-color: #000000;
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
@@ -132,6 +139,9 @@
     --ion-color-dark-shade: #d7d8da;
     --ion-color-dark-tint: #f5f6f9;
 
+    --ion-color-text: #757575;
+    --ion-color-text-light: #AAAAAA;
+    --ion-color-text-hover: #aaaaaa1a;
     --ion-color-medium: #989aa2;
     --ion-color-medium-rgb: 152,154,162;
     --ion-color-medium-contrast: #000000;
@@ -241,4 +251,5 @@ html {
    * https://ionicframework.com/docs/layout/dynamic-font-scaling
    */
   --ion-dynamic-font: var(--ion-default-dynamic-font);
+  --ion-font-family: 'Montserrat', sans-serif !important;
 }

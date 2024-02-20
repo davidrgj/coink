@@ -1,0 +1,35 @@
+.container-info {
+    border-bottom: 2px solid var(--ion-color-primary);
+    padding-bottom: 0.3rem;
+
+    .img-oink {
+        width: 75px;
+    }
+
+    .text-info {
+        color: var(--ion-color-text);
+        font-size: 13px;
+    }
+}
+
+.title-section {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--ion-color-secondary);
+}
+
+p {
+    font-size: 13px;
+    color: #323232;
+}
+
+.see-contract{
+    color: var(--ion-color-secondary);
+    font-weight: bold;
+}
+
+ion-checkbox{
+    color: #004B40;
+    --checkmark-color: #fff;
+    --checkmark-width: 2px !important;
+}

@@ -24,3 +24,71 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+/* Coink styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.btn-coink {
+    height: 50px;
+    margin: 18px 10px;
+    font-weight: bold;
+    font-size: 16px;
+
+    &.primary {
+        --box-shadow: var(--ion-box-shadow-primary);
+    }
+}
+
+input {
+    color: #212121 !important;
+}
+
+.input-label-placement-floating.ion-touched.ion-invalid.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md {
+    font-weight: bold;
+}
+
+.sc-ion-select-popover-md-h ion-list.sc-ion-select-popover-md{
+    padding: 0;
+}
+
+.item-radio-checked.sc-ion-select-popover-md {
+    --background: var(--ion-color-text-hover);
+    --background-focused: var(--ion-color-text-hover);
+    --background-hover: var(--ion-color-text-hover);    
+}
+
+ion-item.sc-ion-select-popover-md {
+    color: #212121;
+    display: flex;
+    border-bottom: 2px solid #EEEEEE;
+    max-height: 39px;
+    font-size: 13px;
+    min-width: 111%;
+}
+
+.input-pin {
+    input[type="password"] {
+        -webkit-text-security: disc;
+    }
+
+    /* Adjust spacing between digits in PIN input field */
+    .native-wrapper.sc-ion-input-ios,
+    .native-wrapper.sc-ion-input-md {
+        letter-spacing: 10px;
+
+        input[type="password"] {
+            font-weight: bold;
+        }
+    }
+}
+
+ion-modal{
+    @media (min-height: 600px) and (min-width: 768px) {
+        --border-radius: 20px;
+    }
+}

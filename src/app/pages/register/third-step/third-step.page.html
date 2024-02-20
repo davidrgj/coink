@@ -1,0 +1,43 @@
+<div class="ion-padding ion-margin-bottom">
+  <ion-grid>
+    <ion-row class="container-info">
+      <ion-col size="4">
+        <ion-img src="assets/icon/oink-police.svg" alt="Coink" class="img-oink"></ion-img>
+      </ion-col>
+      <ion-col>
+        <h6 class="title-section">ESTAS MUY CERCA DE SER PARTE DE COINK.</h6>
+        <p class="text-info">
+          Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form class="ion-padding">
+    <h6 class="title-section">LO MÁS IMPORTANTE</h6>
+    <div>
+      <p>Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con nuestra
+        legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones</p>
+      <p>Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el
+        mes y realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura de
+        un Depósito Ordinario COINK Persona Natural.</p>
+      <p>Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para consultar tu
+        saldo, tus movimientos, realizar tus transacciones y administrar tu cuenta.</p>
+      <p>Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.</p>
+    </div>
+
+    <div>
+      <a href="#" class="see-contract">Lee tu contrato</a>
+    </div>
+
+    <ion-checkbox mode="md" labelPlacement="end" class="ion-margin-top" (ionChange)="acceptConditionsCheck($event)"
+      [checked]="acceptConditions">
+      He leído ya acepto el contrato
+    </ion-checkbox>
+
+    <ion-button expand="block" color="primary" shape="round" [disabled]="!acceptConditions" class="btn-coink primary"
+      (click)="finish()">
+      ACEPTAR
+    </ion-button>
+  </form>
+</div>

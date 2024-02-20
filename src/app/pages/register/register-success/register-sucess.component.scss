@@ -1,0 +1,46 @@
+.backgrop-modal-sucess {
+    height: 100%;
+
+    @media (max-width: 768px) {
+        background: #00000033;
+        display: flex;
+    }
+}
+
+.modal-sucess {
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    background: var(--ion-background-color);
+
+    @media (max-width: 768px) {
+        box-shadow: 0 1px 6px 0 #20212447;
+    }
+
+    @media (min-width: 768px) {
+        height: calc(100% - 10%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.container-info {
+    ion-img {
+        width: 100px;
+        margin: 2.5rem auto;
+    }
+
+    h2 {
+        color: var(--ion-color-secondary);
+        font-size: large;
+        font-weight: bold;
+    }
+
+    p.text-info {
+        font-size: 15px;
+        color: #212121;
+        margin-bottom: 2rem;
+    }
+
+}

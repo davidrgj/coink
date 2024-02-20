@@ -1,0 +1,75 @@
+.container-info {
+    border-bottom: 2px solid var(--ion-color-primary);
+    padding-bottom: 0.3rem;
+
+    .img-oink {
+        width: 75px;
+    }
+
+    .text-info {
+        color: var(--ion-color-text);
+        font-size: 13px;
+    }
+}
+
+.title-section{
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--ion-color-secondary);
+}
+
+.action-show-pasword{
+    position: absolute;
+    right: 18px;
+    color: #212121;
+    font-size: 16px;
+    z-index: 99;
+}
+
+ion-item {
+    --color: var(--ion-color-text-light);
+}
+
+ion-select {
+    --placeholder-color: var(--ion-color-text-light);
+    --placeholder-opacity: 1;
+}
+
+ion-select::part(text) {
+    color: #212121;
+    font-size: 14px;
+}
+
+ion-select.ion-valid {
+    --highlight-color: var(--ion-color-text-light);
+}
+
+ion-select::part(icon){
+    color: var(--ion-color-text-light);
+}
+
+ion-select.always-flip::part(icon) {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ion-select.always-flip.select-expanded::part(icon) {
+    transform: rotate(180deg);
+}
+
+ion-select.never-flip::part(icon) { 
+    transform: none;
+}
+
+ion-input {
+    --placeholder-color: var(--ion-color-text-light);
+    --highlight-color: var(--ion-color-text-light);
+    color: var(--ion-color-text-light);
+}
+
+ion-input.ion-valid {
+    --highlight-color: var(--ion-color-text-light);
+}
+
+.select-item{
+    max-width: 96%;
+}

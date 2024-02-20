@@ -1,0 +1,108 @@
+<div class="ion-padding ion-margin-bottom">
+  <ion-grid>
+    <ion-row class="container-info">
+      <ion-col size="4">
+        <ion-img src="assets/icon/oink-big.svg" alt="Coink" class="img-oink"></ion-img>
+      </ion-col>
+      <ion-col>
+        <h6 class="title-section">¿CUÁLES SON TUS DATOS?</h6>
+        <p class="text-info">
+          Ahora necesitamos saber algunos datos tuyos
+        </p>     
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form [formGroup]="form">
+
+    <h6 class="title-section">Documento de identidad</h6>
+    <ion-list>
+      <ion-item class="select-item">
+        <ion-select formControlName="document_type" interface="popover" labelPlacement="stacked"
+          placeholder="Tipo de documento" [label]="form.get('document_type')?.value ? 'Tipo de documento' : ''"
+          mode="md">
+          <ion-select-option *ngFor="let documentType of documentTypes" [value]="documentType?.id" mode="ios">
+            {{ documentType?.description }}
+          </ion-select-option>
+        </ion-select>
+        <div *ngIf="loadingDocumentTypes" class="loading-spinner">
+          <ion-spinner name="crescent"></ion-spinner>
+        </div>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input autofocus="false" formControlName="document_number" labelPlacement="floating"
+          [errorText]="validateFieldMessage('document_number')" mode="md">
+          <div slot="label">Número de documento</div>
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input type="date" autofocus="false" formControlName="document_issue_date" labelPlacement="floating"
+          [errorText]="validateFieldMessage('document_issue_date')" max="{{ getCurrentDate() }}" mode="md">
+          <div slot="label">Fecha de expedición del documento</div>
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input type="date" autofocus="false" formControlName="birth_date" labelPlacement="floating"
+          [errorText]="validateFieldMessage('birth_date')" max="{{ getCurrentDate() }}"  mode="md">
+          <div slot="label">Fecha de nacimiento</div>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select formControlName="gender" interface="popover" labelPlacement="stacked" placeholder="Género"
+          [label]="form.get('gender')?.value ? 'Género' : ''" mode="md">
+          <ion-select-option *ngFor="let gender of genders" [value]="gender?.id" mode="ios">
+            {{ gender?.description }}
+          </ion-select-option>
+        </ion-select>
+        <div *ngIf="loadingGenders" class="loading-spinner">
+          <ion-spinner name="crescent"></ion-spinner>
+        </div>
+      </ion-item>
+
+      <h6 class="title-section ion-margin-top ion-padding-top">Configura tu cuenta</h6>
+      <ion-item lines="none">
+        <ion-input type="email" autofocus="false" formControlName="email" labelPlacement="floating"
+          [errorText]="validateFieldMessage('email')" mode="md">
+          <div slot="label">Correo eléctronico</div>
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="email" autofocus="false" formControlName="email_confirmation" labelPlacement="floating"
+          [errorText]="validateFieldMessage('email_confirmation')" mode="md">
+          <div slot="label">Confirmar correo eléctronico</div>
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input [type]="showPassword ? 'text' : 'password'" autofocus="false" formControlName="pin" maxlength="4"
+          labelPlacement="floating" [errorText]="validateFieldMessage('pin')" class="input-pin" mode="md">
+          <div slot="label">PIN de seguridad</div>
+        </ion-input>
+        <ion-button fill="clear" class="action-show-pasword" (click)="toggleShowPassword()">
+          <ion-icon [name]="showPassword ? 'eye-off' : 'eye'" aria-hidden="true"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input [type]="showPasswordConfirmation ? 'text' : 'password'" autofocus="false"
+          formControlName="pin_confirmation" maxlength="4" labelPlacement="floating"
+          [errorText]="validateFieldMessage('pin_confirmation')" class="input-pin" mode="md">
+          <div slot="label">Confirmar PIN de seguridad</div>
+        </ion-input>
+        <ion-button fill="clear" class="action-show-pasword" (click)="toggleShowPasswordConfirmation()">
+          <ion-icon [name]="showPasswordConfirmation ? 'eye-off' : 'eye'" aria-hidden="true"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" class="btn-coink primary"
+      (click)="nextSlide()">
+      SIGUIENTE
+    </ion-button>
+
+  </form>
+</div>

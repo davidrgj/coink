@@ -1,0 +1,48 @@
+<div class="ion-padding ion-margin-bottom">
+  <ion-grid>
+    <ion-row class="container-info">
+      <ion-col size="4">
+        <ion-img src="assets/icon/oink.svg" alt="Coink" class="img-oink"></ion-img>
+      </ion-col>
+      <ion-col>
+        <p class="text-info">
+          Para comenzar, por favor ingresa <b>tu número celular.</b>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form [formGroup]="form">
+    <ion-input type="text" formGroupName="phoneNumber" class="number-input" placeholder="( X X X - X X X X X X )"
+      [value]="form.get('phoneNumber')?.value" readonly>
+    </ion-input>
+  </form>
+
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col size="4" *ngFor="let number of numericKeyboard">
+        <ion-button (click)="addDigit(number)" expand="block" color="transparent" class="number-key">
+          {{ number}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <ion-button (click)="deleteDigit()" expand="block" color="transparent" class="backspace-key">
+          <ion-icon src="assets/icon/backspace.svg"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button (click)="addDigit(0)" expand="block" color="transparent" class="number-key">0</ion-button>
+      </ion-col>
+      <ion-col size="4" class="check-key">
+        <ion-button (click)="acceptForm()" expand="block"
+          [ngStyle]="{ 'background': form.valid ? 'var(--ion-color-primary)' : '#D3D3D3' }" color="transparent"
+          [disabled]="form.invalid || form.get('phoneNumber')?.value?.length !== 11" class="check-button">
+          <ion-icon name="checkmark"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</div>

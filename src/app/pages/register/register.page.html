@@ -1,0 +1,49 @@
+<ion-header mode="md">
+  <ion-toolbar>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1" class="option-back">
+          <ion-icon name="chevron-back" color="primary" class="btn-back" (click)="backButton()"></ion-icon>
+        </ion-col>
+        <ion-col class="title-segment">
+          <h6>{{ getLabelProgress() }}</h6>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-segment [(ngModel)]="progress" mode="ios" readonly>
+      <ion-segment-button id="segment-btn-1" value="1"
+        [ngClass]="personalData.phoneNumber ? 'segment-button-checked' : ''">
+      </ion-segment-button>
+      <ion-segment-button id="segment-btn-2" value="2"
+        [ngClass]="personalData.basicData ? 'segment-button-checked' : ''">
+      </ion-segment-button>
+      <ion-segment-button id="segment-btn-3" value="3"
+        [ngClass]="personalData.acceptPolicies ? 'segment-button-checked' : ''">
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="content ion-padding-vertical">
+    <ng-container *ngIf="progress === '1'">
+      <app-first-step (formValue)="infoPhoneNumber($event)"></app-first-step>
+    </ng-container>
+
+    <ng-container *ngIf="progress === '2'">
+      <app-second-step (formValue)="infoRegister($event)"></app-second-step>
+    </ng-container>
+
+    <ng-container *ngIf="progress === '3'">
+      <app-third-step (formValue)="infoAcceptConditions($event)"></app-third-step>
+    </ng-container>
+  </div>
+
+
+
+</ion-content>
